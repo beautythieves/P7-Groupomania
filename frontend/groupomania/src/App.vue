@@ -1,10 +1,23 @@
-<template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+<template>  
+  <Header/>
+  <inscform/>
   <router-view/>
 </template>
+
+<script>
+import Header from '@/components/Header';
+import inscform from '@/components/inscform';
+
+export default {
+    name: 'App',
+    data: function() {
+        return {
+            text: "Hi This is example on usage of Vue.js Components"
+        };
+    },
+    components: { Header, inscform },
+};
+</script>
 
 <style lang="scss">
 #app {
