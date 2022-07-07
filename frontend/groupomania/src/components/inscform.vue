@@ -1,9 +1,9 @@
 <template>
     <div class="grp-form-inscription">
         ici mon formulaire
-        <input placeholder="Courriel"/>
-        <input placeholder="Mot de passe"/>
-        <input placeholder="Confirmez le mot de passe"/>
+        <input placeholder="Courriel" class= "grp-form-inscription-form"/>
+        <input placeholder="Mot de passe" class="grp-form-inscription-form"/>
+        <input placeholder="Confirmez le mot de passe" class= "grp-form-inscription-form"/>
         <button> Se connecter</button>
     </div>
        
@@ -26,14 +26,19 @@ export default {
 <style lang="scss">
 .grp-form-inscription {
     display:flex;
+    flex-direction: column;
+    width: 50%;
     background-color:#FFD7D7;
-    height: 80px;
-    justify-content: space-between;
-}
-.grp-header__navbar {
-    display:flex;
-    background-color:#FFD7D7;
-    height: 100px;
+    font-size:25px;
     justify-content: space-around;
+    align-content: center;
+    margin: auto;
 }
+.grp-form-inscription-form {
+    display:flex;
+    background-color:#d7dbff;
+    height: 50px;
+    justify-content: center;
+    align-content: center;
+    }
 </style>

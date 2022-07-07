@@ -2,6 +2,7 @@
     <div class="grp-header">
         <div class="grp-header__logo">
             ici insertion du logo groupomania
+           <!--<img src="@assets/logogrp.png"/> marche pas--> 
             <i class="fa-brands fa-reddit"></i> {{ text }}
         </div>
         <!-- Comment séparer les deux liens de nav?-->
@@ -13,6 +14,8 @@
 </template>
 
 <script>
+
+
 export default {
     name: 'Header',
     data() {

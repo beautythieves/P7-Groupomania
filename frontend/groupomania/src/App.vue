@@ -1,12 +1,14 @@
 <template>  
   <Header/>
   <inscform/>
+  <Home/>
   <router-view/>
 </template>
 
 <script>
 import Header from '@/components/Header';
 import inscform from '@/components/inscform';
+import Home from '@/components/Home';
 
 export default {
     name: 'App',
@@ -15,13 +17,13 @@ export default {
             text: "Hi This is example on usage of Vue.js Components"
         };
     },
-    components: { Header, inscform },
+    components: { Header, inscform, Home },
 };
 </script>
-
+   <!-- font family lato-->
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Lato;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
