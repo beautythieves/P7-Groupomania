@@ -1,14 +1,10 @@
 <template>  
   <Header/>
-  <inscform/>
-  <Home/>
   <router-view/>
 </template>
 
 <script>
 import Header from '@/components/Header';
-import inscform from '@/components/inscform';
-import Home from '@/components/Home';
 
 export default {
     name: 'App',
@@ -17,7 +13,7 @@ export default {
             text: "Hi This is example on usage of Vue.js Components"
         };
     },
-    components: { Header, inscform, Home },
+    components: { Header },
 };
 </script>
    <!-- font family lato-->

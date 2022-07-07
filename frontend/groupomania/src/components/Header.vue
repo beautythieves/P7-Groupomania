@@ -2,13 +2,12 @@
     <div class="grp-header">
         <div class="grp-header__logo">
             ici insertion du logo groupomania
-           <!--<img src="@assets/logogrp.png"/> marche pas--> 
+           <img src="@/assets/logogrp.png"/> 
             <i class="fa-brands fa-reddit"></i> {{ text }}
         </div>
         <!-- Comment séparer les deux liens de nav?-->
         <div class="grp-header__navbar">
-            <router-link to="/posts">Connexion</router-link>
-            <router-link to="/login">Inscription</router-link> |
+            <router-link to="/posts">Tous les posts</router-link> |
         </div>
     </div>
 </template>
