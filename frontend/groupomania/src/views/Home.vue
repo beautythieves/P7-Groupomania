@@ -3,8 +3,7 @@
         Bienvenu sur le réseau social interne de l'entreprise
         <button><router-link to="/login">Connexion</router-link></button>
         <button><router-link to="/signup">Inscription</router-link></button>
-        
-             
+            
     </div>
     
 </template>
