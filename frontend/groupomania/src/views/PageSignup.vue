@@ -1,0 +1,24 @@
+<template>
+    <div> 
+    <HeaderLoginSignup/>
+   <Signup/>
+   </div>
+    
+</template>
+
+<script>
+import HeaderLoginSignup from '@/components/HeaderLoginSignup.vue';
+import Signup from '@/components/Signup.vue';
+
+export default {
+    name: 'Signup',
+    components: { HeaderLoginSignup, Signup }
+    
+}
+</script>
+
+
+<style lang="scss">
+
+
+</style>

@@ -1,22 +1,19 @@
 <template>
-    <div class="grp-accueil">
-        Bienvenu sur le réseau social interne de l'entreprise
-        <button><router-link to="/login">Connexion</router-link></button>
-        <button><router-link to="/signup">Inscription</router-link></button>
-            
-    </div>
+    
+     <Post/>
+    
+    
     
 </template>
 
 <script>
+import Post from '@/components/Post.vue';
+
 export default {
-    name: 'Home',
-    data() {
-        return {
-            text: "Mon beau site"
-        };
-    }
-};
+    name: 'Posts',
+    components: {Post}
+    
+}
 </script>
 
 
@@ -43,4 +40,9 @@ export default {
     background: linear-gradient(#626b65, #e2e470);
 }
 
+</style>
+
+
+
+<style lang="scss">
 </style>

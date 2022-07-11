@@ -14,7 +14,7 @@ mongoose.connect('mongodb+srv://admin:admin51@cluster0.4sx4e.mongodb.net/?retryW
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 
-  app.use(bodyParser.json());
+  app.use(express.json());
  
 app.use((req, res, next) => {
      res.setHeader('Access-Control-Allow-Origin', '*');

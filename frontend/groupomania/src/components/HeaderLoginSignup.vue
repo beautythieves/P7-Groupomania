@@ -3,8 +3,12 @@
      <div class ="grp-header__logo">
         <img src = "@/assets/logogrp.png" alt="logo de groupomania">
      </div>
+     <div> 
+        <a><router-link to="/Home">Accueil</router-link></a>   
+     </div>
      <div class="grp-header__contact">
         <a href="mailto:admin@groupomania.com">Contact</a>
+        
      </div>
   </div>
 </template>
@@ -12,7 +16,7 @@
 <script>
 
 export default {
-    name: 'Header',
+    name: 'HeaderLoginSignup',
     data() {
         return {
             text: "Mon beau site"
@@ -25,7 +29,7 @@ export default {
 <style lang="scss">
 .grp-header {
     display:flex;
-    background-color:rgb(111, 0, 255);
+    background-color:rgb(76, 0, 255);
         height: 200px;
     justify-content: space-around;
     border-style: solid;
