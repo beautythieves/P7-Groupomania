@@ -11,7 +11,7 @@ import HeaderLoginSignup from '@/components/HeaderLoginSignup.vue';
 import Signup from '@/components/Signup.vue';
 
 export default {
-    name: 'Signup',
+    name: 'PageSignup',
     components: { HeaderLoginSignup, Signup }
     
 }

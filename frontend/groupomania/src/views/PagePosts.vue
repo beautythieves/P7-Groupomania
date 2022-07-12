@@ -1,5 +1,5 @@
 <template>
-    
+    <button @click="afficherPosts">afficher les posts</button>
      <Post/>
     
     
@@ -11,8 +11,12 @@ import Post from '@/components/Post.vue';
 
 export default {
     name: 'Posts',
-    components: {Post}
-    
+    components: {Post},
+    data() {
+        return {
+            allPosts: [],
+        };
+    },
 }
 </script>
 

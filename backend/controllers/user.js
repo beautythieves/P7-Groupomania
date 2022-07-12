@@ -6,6 +6,7 @@ const User = require('../models/user');
 
 /* controleur création d'un compte utilisateur*/
 exports.signup = (req, res, next) => {
+    console.log('youpi je suis sur lserveur', req.body.password)
     bcrypt.hash(req.body.password, 10)
       .then(hash => {
         const user = new User({
