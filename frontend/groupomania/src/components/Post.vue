@@ -8,18 +8,30 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 
 export default {
     name: 'Post',
     data() {
         return {
-            title: 'titre',
-            content: 'Je suis le contenu du post',
-            author: 'toto',
+            isError: false,
+            userId: "",
+            post: "",
+            image: "",
+            likes: "",
+            dislikes: "",
+            usersLiked:"",
+            usersDisliked: "",
         };
     },
-    props: {
-        id: { type: Number }
+    methods: {
+        ...mapActions({
+            post: "post",
+        }),
+        showAllPosts() {
+            this.post({userId: this.userId, post: this.post, image: this.image, likes: this.likes, dislikes: this.dislikes, usersLiked: this.usersLiked, usersDisliked: this.usersDisliked})
+            .then(console.log ("youpi youpi"));
+        }
     }
 };
 </script>

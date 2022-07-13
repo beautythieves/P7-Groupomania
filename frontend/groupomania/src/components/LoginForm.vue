@@ -5,17 +5,18 @@
             <form class="grp-login__form">
                 <div class="grp-login__form__email">
                     <label class="">Email </label>
-                    <input type="email" class="">
+                    <input v-model="email" type="email" class="">
                 </div>
                 <div class="grp-login__form__password">
                     <label class="">Mot de passe </label>
-                    <input type="password" class="">
+                    <input v-model="password" type="password" class="">
                 </div>
                 <div class="grp-login__form__login">
-                <button type= "button" class="grp-login__form__login__button">Login</button>
+                <button @click= "goLogin" type= "button" class="grp-login__form__login__button">Login</button>
                 </div>
                
             </form>
+            <div v-if="isError">Erreur de connexion</div>
         </div>
     </div>
 
@@ -23,12 +24,24 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
-    name: 'login',
+    name: 'Login',
     data() {
         return {
-            text: "Mon beau site"
+            isError: false,
+            email: "",
+            password: "",
         };
+    },
+    methods: {
+        ...mapActions({
+            login: 'login',
+        }),
+        goLogin() {
+            this.login({ email: this.email, password: this.password})
+            .then(this.$router.push('posts'));
+        }
     }
 };
 </script>

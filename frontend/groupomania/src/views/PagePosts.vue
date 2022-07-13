@@ -1,12 +1,14 @@
 <template>
-    <button @click="afficherPosts">afficher les posts</button>
+<div>
+    <button @click="showAllPosts">afficher les posts</button>
      <Post/>
     
-    
+    </div>
     
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import Post from '@/components/Post.vue';
 
 export default {
@@ -15,9 +17,27 @@ export default {
     data() {
         return {
             allPosts: [],
+ 
+            isError: false,
+            userId: "",
+            post: "",
+            image: "",
+            likes: "",
+            dislikes: "",
+            usersLiked:"",
+            usersDisliked: "",
         };
     },
-}
+    methods: {
+        ...mapActions({
+            post2: "post2",
+        }),
+        showAllPosts() {
+            this.post2({userId: this.userId, post: this.post, image: this.image, likes: this.likes, dislikes: this.dislikes, usersLiked: this.usersLiked, usersDisliked: this.usersDisliked})
+            .then(console.log ("youpi youpi"));
+        }
+    }
+};
 </script>
 
 
