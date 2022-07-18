@@ -1,14 +1,14 @@
 <template>
   
 <div class=" grp-editpost__body">
-    <div class="container">
-      <div class="wrapper">
-        <section class="post">
+    <div class="grp-editpost__container">
+      <div class="grp-editpost__wrapper">
+        <section class="grp-editpost__post">
           <header>Publier un post</header>
           <form action="#">
-            <textarea placeholder="Exprimez-vous" spellcheck="false" required></textarea>
+            <textarea placeholder="Exprimez-vous" required></textarea>
                 <div class="option">
-              <p>Ajouter une image.Formats acceptés: Jpeg, Jpg, Png, max 50 mo.</p>
+                <button @click="addImage" type= "button" class="grp-signup__form__signup__button">Signup</button>
                 </div>
                 <button>Publier</button>
           </form>
@@ -22,7 +22,7 @@
 <script>
 
 export default {
-    name: 'Header',
+    name: 'ModelPost',
     data() {
         return {
             text: "Mon beau site"

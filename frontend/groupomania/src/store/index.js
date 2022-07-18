@@ -27,6 +27,7 @@ export default createStore({
       });
     },
 
+
     login(_context, userslogin) {
       return new Promise((resolve, reject) => {
         api.post('auth/login', userslogin)
@@ -40,16 +41,27 @@ export default createStore({
         });
       });
     },
-    post2( )
-    {console.log ("ok")
-
+// création de posts
+      createPost(_context, postContents) {
+        return new Promise((resolve, reject) => {
+        api.post('post', postContents)
+        .then(response => {
+          console.log ("success", response)
+          resolve(response)
+        })
+        .catch(error => {
+          console.log("failure!", error)
+          reject(error)
+        });
+      });
     },
-    showAllPosts(_context, messages) {
+   
+    showAllPosts() {
       return new Promise((resolve, reject) => {
-        api.get('auth/post', messages)
+        api.get('post')
         .then(response => {
           console.log ("yes yes", response)
-          resolve(response)
+          resolve(response.data)
         })
         .catch(error => {
           console.log("raté!", error)

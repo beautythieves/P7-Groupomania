@@ -3,8 +3,8 @@
      <div class ="grp-header__logo">
         <img src = "@/assets/logogrp.png" alt="logo de groupomania">
      </div>
-     <div> 
-        <a><router-link to="/Home">Accueil</router-link></a>   
+     <div class="grp-header__accueil"> 
+        <a><router-link to="/">Accueil</router-link></a>   
      </div>
      <div class="grp-header__contact">
         <a href="mailto:admin@groupomania.com">Contact</a>
@@ -42,10 +42,11 @@ export default {
     background-color:#FFD7D7;
  
 }
-.grp-header__contact {
+.grp-header__contact a, .grp-header__accueil a{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 20px;
+    color: white;
 }
 </style>

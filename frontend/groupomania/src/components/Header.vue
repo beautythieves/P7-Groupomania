@@ -38,10 +38,11 @@ export default {
     background-color:#FFD7D7;
  
 }
-.grp-header__contact {
+.grp-header__contact  a {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 20px;
+    color: white;
 }
 </style>

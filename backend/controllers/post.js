@@ -2,12 +2,12 @@ const Post = require('../models/post'); // importation du modèle de post
 const fs = require('fs');
 /* création d'un post*/
 exports.createPost = (req, res, next) => {
-
-    const postObject = JSON.parse(req.body.post);
-   
+    console.log('createPost', req.body)
+    const postObject = req.body.post;
+   console.log('crerate23')
     const post = new Post({
       ...postObject,
-      imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+      //imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
     });
     post.save() // sauvegarde le post dans la BDD
       .then(() => res.status(201).json({ message: 'post créé'}))

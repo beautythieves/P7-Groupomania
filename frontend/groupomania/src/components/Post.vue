@@ -1,9 +1,13 @@
 <template>
-    <div class="grp-post">
-        Je suis le post numéro {{ id }}
-        <div class="grp-post__title">{{ title }}</div>
-        <div class="grp-post__content">{{ content }}</div>
-        <div class="grp-post__author">{{ author }}</div>
+    <div>
+        <button @click="showAllPosts">afficher les posts</button>
+
+    <div class="grp-post" v-for="pommedeterre in posts" :key="pommedeterre.id">
+        Je suis le post numéro {{ pommedeterre.id }}
+        <div class="grp-post__title">texte : {{ pommedeterre.post }}</div>
+        <div class="grp-post__content">{{ pommedeterre.likes }}</div>
+        <div class="grp-post__author">{{ pommedeterre.dislikes }}</div>
+    </div>
     </div>
 </template>
 
@@ -11,26 +15,23 @@
 import { mapActions } from 'vuex';
 
 export default {
-    name: 'Post',
+    name: 'Post2',
     data() {
         return {
+            posts: [],
             isError: false,
-            userId: "",
-            post: "",
-            image: "",
-            likes: "",
-            dislikes: "",
-            usersLiked:"",
-            usersDisliked: "",
         };
     },
     methods: {
         ...mapActions({
-            post: "post",
+            post2: "showAllPosts",
         }),
         showAllPosts() {
-            this.post({userId: this.userId, post: this.post, image: this.image, likes: this.likes, dislikes: this.dislikes, usersLiked: this.usersLiked, usersDisliked: this.usersDisliked})
-            .then(console.log ("youpi youpi"));
+            this.post2()
+            .then((response) => {
+                console.log ("youpi youpi", response)
+                this.posts = response;
+            });
         }
     }
 };

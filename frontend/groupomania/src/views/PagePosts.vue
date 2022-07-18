@@ -1,43 +1,22 @@
 <template>
-<div>
-    <button @click="showAllPosts">afficher les posts</button>
-     <Post/>
+    <div>
+    <HeaderPosts/>
+     <Post2/>
     
     </div>
     
 </template>
 
 <script>
-import { mapActions } from 'vuex';
-import Post from '@/components/Post.vue';
+import HeaderPosts from '@/components/HeaderPosts.vue';
+import Post2 from '@/components/Post.vue';
+
 
 export default {
     name: 'Posts',
-    components: {Post},
-    data() {
-        return {
-            allPosts: [],
- 
-            isError: false,
-            userId: "",
-            post: "",
-            image: "",
-            likes: "",
-            dislikes: "",
-            usersLiked:"",
-            usersDisliked: "",
-        };
-    },
-    methods: {
-        ...mapActions({
-            post2: "post2",
-        }),
-        showAllPosts() {
-            this.post2({userId: this.userId, post: this.post, image: this.image, likes: this.likes, dislikes: this.dislikes, usersLiked: this.usersLiked, usersDisliked: this.usersDisliked})
-            .then(console.log ("youpi youpi"));
-        }
-    }
-};
+    components: {Post2, HeaderPosts},
+  
+}
 </script>
 
 
