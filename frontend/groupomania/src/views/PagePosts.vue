@@ -2,6 +2,7 @@
     <div>
     <HeaderPosts/>
      <Post2/>
+     <ModelPost/>
     
     </div>
     
@@ -10,11 +11,11 @@
 <script>
 import HeaderPosts from '@/components/HeaderPosts.vue';
 import Post2 from '@/components/Post.vue';
-
+import ModelPost from '@/components/EditPost.vue';
 
 export default {
     name: 'Posts',
-    components: {Post2, HeaderPosts},
+    components: {Post2, HeaderPosts, ModelPost},
   
 }
 </script>

@@ -1,150 +1,101 @@
 <template>
   
 <div class=" grp-editpost__body">
-    <div class="grp-editpost__container">
-      <div class="grp-editpost__wrapper">
-        <section class="grp-editpost__post">
-          <header>Publier un post</header>
-          <form action="#">
-            <textarea placeholder="Exprimez-vous" required></textarea>
-                <div class="option">
-                <button @click="addImage" type= "button" class="grp-signup__form__signup__button">Signup</button>
-                </div>
-                <button>Publier</button>
-          </form>
-        </section>
+  <div> 
+    <h1 class=" grp-editpost__title" > Publier un post</h1>
+  </div>
+  <div class=" grp-editpost__form"> 
+    <form action = post>
+      <div class=" grp-editpost__texte">
+        <textarea maxlength="50" placeholder = "Insérez un titre (50 caractères max)" required class=" grp-editpost__titre"></textarea>
+        <textarea maxlength="500" placeholder="Exprimez-vous... (500 caractères max)" required class=" grp-editpost__message"></textarea>
       </div>
-    </div>
+      <div class=" grp-editpost__button">
+        <input id="fileUpload" ref="file" type="file" hidden />
+        <button @click.stop.prevent="addImage" class="grp-editpost__butimage">Ajouter une image</button>
+        <button @click.stop.prevent="sendPost" type="button" class="grp-editpost__butpublish"> Publier</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 </template>
 
 <script>
-
+import { mapActions} from 'vuex';
 export default {
+  // comment ajouter une autre methods pour l'ajout d'image?
     name: 'ModelPost',
     data() {
         return {
-            text: "Mon beau site"
+            posts: [],
+            isError: false,
         };
+    },
+    methods: {
+        ...mapActions({
+            createPost: "createPost",
+        }),
+        sendPost() {
+          const post = {
+            userId: '1', message: 'nouveau post', titre:"ok"
+          };
+          if(this.$file !== undefined){
+            post.image = this.$file
+          }
+            this.createPost({post})
+            //.then(this.$router.push('posts'));
+        },
+        addImage(){
+
+        document.getElementById("fileUpload").click()
+        }
     }
 };
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 .grp-editpost__body{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: red;
-}
-.container{
-  width: 500px;
-  height: 480px;
-  overflow: hidden;
-  background: #fff;
-  border-radius: 10px;
-}
-.post{
-  width: 500px;
-  background: #fff;
-}
-
-.container.active .post{
-  margin-left: -500px;
-}
-.post header{
-  font-size: 22px;
-  font-weight: 600;
-  padding: 17px 0;
-  text-align: center;
-  border-bottom: 1px solid #bfbfbf;
-}
-.post form{
-  margin: 20px 25px;
-}
-
-
-.post form .content .details{
-  margin: -3px 0 0 12px;
-}
-form .content .details p{
-  font-size: 17px;
-  font-weight: 500;
-}
-
-form :where(textarea, button){
-  width: 100%;
-  outline: none;
-  border: none;
-}
-form textarea{
-  resize: none;
-  font-size: 18px;
-  margin-top: 30px;
-  min-height: 100px;
-}
-form textarea::placeholder{
-  color: #858585;
-}
-form textarea:focus::placeholder{
-  color: #b3b3b3;
-}
-form .option{
-  height: 57px;
-  margin: 15px 0;
-  padding: 0 15px;
-  border-radius: 7px;
-  border: 1px solid #B9B9B9;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-form .options :where(.list, li),
-.audience :where(.arrow-back, .icon, li .radio){
+  background: #FFD7D7;
+  }
+.grp-editpost__form, .grp-editpost__texte{
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-form .option p{
-  color: #595959;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: default;
+  flex-direction: column;
+
 }
 
-.option {
-  height: 42px;
-  width: 42px;
-  margin: 0 -1px;
+.grp-editpost__titre {
+  width: 500px;
+  height: 100px;
+  font-size: 20px;
+  resize: none;
+}
+.grp-editpost__message {
+  width: 500px;
+  height: 500px;
+  font-size: 20px;
+  resize: none;
+}
+.grp-editpost__button {
+  display: flex;
+   align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+}
+button {
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
   cursor: pointer;
-  border-radius: 50%;
+  display: inline-block;
+  font-size: 20px;
 }
-.option {
-  background: #f0f1f4;
-}
-.options .list li img{
-  width: 23px;
-}
-button{
-  height: 53px;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  color: #BCC0C4;
-  cursor: no-drop;
-  border-radius: 7px;
-  background: #e2e5e9;
-  transition: all 0.3s ease;
-}
-form textarea:valid ~ button{
-  color: #fff;
-  cursor: pointer;
-  background: #4267B2;
-}
-form textarea:valid ~ button:hover{
-  background: #4267B2;
-}
-
 </style>

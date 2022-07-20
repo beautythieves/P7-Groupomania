@@ -42,9 +42,18 @@ export default createStore({
       });
     },
 // création de posts
-      createPost(_context, postContents) {
+      createPost(_context, post) {
+
+        console.log(post)
+        const formData = new FormData();
+        formData.append("userId", post.userId);
+        formData.append("message", post.message);
+        formData.append("titre", post.titre);
+        if (post.image) formData.append("image", post.image);
+        // console.log(formData)
+
         return new Promise((resolve, reject) => {
-        api.post('post', postContents)
+        api.post('post', formData)
         .then(response => {
           console.log ("success", response)
           resolve(response)
@@ -55,7 +64,44 @@ export default createStore({
         });
       });
     },
-   
+   // effacer un post
+    deletePost(_context, postDel) {
+      return new Promise((resolve, reject) => {
+      api.delete('post/:id', postDel)
+      .then(response => {
+        console.log ("effacé!", response)
+        resolve(response)
+      })
+      .catch(error => {
+        console.log("bummer!", error)
+        reject(error)
+      });
+    });
+  },
+
+  // modifier un post
+  /*modifyPost(_context, postMod) {
+    return new Promise((resolve, reject) => {
+    api.delete('post/:id', postMod)
+    .then(response => {
+      console.log ("effacé!", response)
+      resolve(response)
+    })
+    .catch(error => {
+      console.log("bummer!", error)
+      reject(error)
+    });
+  });
+},
+*/
+
+/* nouvelle route modif/post/:id/edit
+dans le controller qui gère m^me chose 
+que pour afficher le formulaire lors création de post
+passer le post en param vue puis 
+text area contenu du post, titre etc...
+formulaire soumettre meme route methode post.*/
+
     showAllPosts() {
       return new Promise((resolve, reject) => {
         api.get('post')

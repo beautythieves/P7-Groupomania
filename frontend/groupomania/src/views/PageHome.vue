@@ -12,7 +12,6 @@
 <script>
 import Welcome from '@/components/Welcome.vue';
 import Header from '@/components/Header.vue';
-
 export default {
     name: 'Home',
     components: { Welcome, Header }
@@ -43,5 +42,4 @@ export default {
     margin: auto;
     background: linear-gradient(#626b65, #e2e470);
 }
-
 </style>

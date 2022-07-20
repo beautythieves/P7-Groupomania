@@ -17,30 +17,28 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .grp-accueil {
     display:flex;
     flex-direction: column;
     width: 75%;
     background-color:#9b2230;
-    font-size:15px;
     justify-content: center;
     align-items: center;
     margin: auto;
-}
-.grp-accueil{
-    display:flex;
-    flex-direction: column;
-    width: 75%;
-    background-color:#b91c1c;
     font-size:25px;
-    justify-content: center;
-    align-items: center;
     margin: auto;
-    background: linear-gradient(#626b65, #8170e4);
+    background: linear-gradient(#FFD7D7,#FD2D01);
 }
 .grp-accueil__button{
-    font-size: 25px;
-    color: white;
+    font-size: 20px;
+    border-radius:10px;
+    color: white !important;
+    background: linear-gradient(#4E5166,#FD2D01);
+    
+    }
+.grp-accueil__button:hover{
+    background-color:#FFD7D7;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 </style>

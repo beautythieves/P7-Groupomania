@@ -26,10 +26,10 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 .grp-header {
     display:flex;
-    background-color:rgb(76, 0, 255);
+    background-color: white;
         height: 200px;
     justify-content: space-around;
     border-style: solid;
@@ -39,7 +39,7 @@ export default {
 }
 .grp-header__logo {
     display:flex;
-    background-color:#FFD7D7;
+    background-color: white;
  
 }
 .grp-header__contact a, .grp-header__accueil a{
@@ -47,6 +47,6 @@ export default {
     justify-content: center;
     align-items: center;
     font-size: 20px;
-    color: white;
+    color:black;
 }
 </style>

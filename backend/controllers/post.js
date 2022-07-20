@@ -4,7 +4,7 @@ const fs = require('fs');
 exports.createPost = (req, res, next) => {
     console.log('createPost', req.body)
     const postObject = req.body.post;
-   console.log('crerate23')
+   console.log('crerate236')
     const post = new Post({
       ...postObject,
       //imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`

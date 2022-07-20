@@ -2,12 +2,10 @@
   <div>
     <!-- comment positionner l'image background?-->
   <router-view/>
-  <BackgroundImageVue/>
   </div>
 </template>
 
 <script>
-import BackgroundImageVue from './components/BackgroundImage.vue';
 
 export default {
     name: 'App',
@@ -16,7 +14,7 @@ export default {
             text: "Hi This is example on usage of Vue.js Components"
         };
     },
-    components: { BackgroundImageVue },
+    components: {  },
 };
 </script>
    <!-- font family lato-->

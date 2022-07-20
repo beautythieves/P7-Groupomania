@@ -22,27 +22,31 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 .grp-header {
     display:flex;
-    background-color:rgb(111, 0, 255);
-        height: 200px;
+    background-color: white;
+    height: 200px;
     justify-content: space-around;
+    align-content: center;
     border-style: solid;
     border-width: 5px;
     border-color: #4E5166;
+    margin: auto;
+    width:90%;
 
 }
 .grp-header__logo {
     display:flex;
-    background-color:#FFD7D7;
+    background-color:white;
  
 }
 .grp-header__contact  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
     font-size: 20px;
-    color: white;
+    color: black;
+    position: absolute;
+    right:150px;
+    top: 50px;
 }
 </style>
