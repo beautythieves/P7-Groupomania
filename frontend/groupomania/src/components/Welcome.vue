@@ -29,6 +29,7 @@ export default {
     font-size:25px;
     margin: auto;
     background: linear-gradient(#FFD7D7,#FD2D01);
+     background-image: url('~@/assets/logosansnom.png');
 }
 .grp-accueil__button{
     font-size: 20px;

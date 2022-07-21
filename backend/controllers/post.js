@@ -4,7 +4,6 @@ const fs = require('fs');
 exports.createPost = (req, res, next) => {
     console.log('createPost', req.body)
     const postObject = req.body.post;
-   console.log('crerate236')
     const post = new Post({
       userId: req.body.post.userId,
       post: require.body.post.post,

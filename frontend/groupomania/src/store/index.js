@@ -43,8 +43,7 @@ export default createStore({
     },
 // création de posts
       createPost(_context, post) {
-
-        console.log(post)
+        console.log(post.userId)
         const formData = new FormData();
         formData.append("userId", post.userId);
         formData.append("message", post.message);

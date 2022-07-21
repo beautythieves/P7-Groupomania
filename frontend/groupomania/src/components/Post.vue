@@ -8,7 +8,6 @@
         <div class="grp-post__title">texte : {{ pommedeterre.post }}</div>
         <div class=" grp-post__likesdislikes">
             <div class="grp-post__like"><i class="fa-regular fa-thumbs-up"></i> {{ pommedeterre.likes }}</div>
-            <div class="grp-post__dislike"><i class="fa-regular fa-thumbs-down"></i>{{ pommedeterre.dislikes }}</div>
         </div>
     </div>
     </div>

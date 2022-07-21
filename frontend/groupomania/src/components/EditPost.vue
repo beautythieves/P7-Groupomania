@@ -24,7 +24,6 @@
 <script>
 import { mapActions} from 'vuex';
 export default {
-  // comment ajouter une autre methods pour l'ajout d'image?
     name: 'ModelPost',
     data() {
         return {
@@ -63,7 +62,9 @@ export default {
   justify-content: center;
   min-height: 100vh;
   background: #FFD7D7;
+  background-image: url('~@/assets/logosansnom.png');
   }
+
 .grp-editpost__form, .grp-editpost__texte{
   display: flex;
   flex-direction: column;
@@ -75,12 +76,14 @@ export default {
   height: 100px;
   font-size: 20px;
   resize: none;
+  font-family: Lato;
 }
 .grp-editpost__message {
   width: 500px;
   height: 500px;
   font-size: 20px;
   resize: none;
+  font-family: Lato;
 }
 .grp-editpost__button {
   display: flex;
@@ -97,5 +100,6 @@ button {
   cursor: pointer;
   display: inline-block;
   font-size: 20px;
+  font-family: Lato;
 }
 </style>
