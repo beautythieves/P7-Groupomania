@@ -6,7 +6,8 @@ exports.createPost = (req, res, next) => {
     const postObject = req.body.post;
    console.log('crerate236')
     const post = new Post({
-      ...postObject,
+      userId: req.body.post.userId,
+      post: require.body.post.post,
       //imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
     });
     post.save() // sauvegarde le post dans la BDD
