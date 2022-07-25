@@ -42,65 +42,55 @@ export default createStore({
       });
     },
 // création de posts
-      createPost(_context, post) {
-        console.log(post.userId)
-        const formData = new FormData();
-        formData.append("userId", post.userId);
-        formData.append("message", post.message);
-        formData.append("titre", post.titre);
-        if (post.image) formData.append("image", post.image);
-        // console.log(formData)
-
-        return new Promise((resolve, reject) => {
-        api.post('post', formData)
-        .then(response => {
-          console.log ("success", response)
+    createPost(_context, post) {
+      const formData = new FormData();
+      formData.append("content", post.content);
+      formData.append("title", post.title);
+      if (post.file) formData.append("inputFile", post.file);
+      axios.post('http://localhost:4000/api/post', formData,
+        {
+          headers: {
+            'Content-Type': 'application/form-data',
+            //"Authorization": `Bearer ${this.user.token}`,
+          },
+        }
+      )
+    },
+    modifyPost(_context, post) {
+      const formData = new FormData();
+      formData.append("content", post.content);
+      if (post.file) formData.append("inputFile", post.file);
+      return new Promise((resolve, reject) => {
+      axios.post(`http://localhost:4000/api/post/${post.postId}`, formData,
+        {
+          headers: {
+            'Content-Type': 'application/form-data',
+            //"Authorization": `Bearer ${this.user.token}`,
+          },
+        }).then(response => {
+          console.log ("effacé!", response)
           resolve(response)
         })
         .catch(error => {
-          console.log("failure!", error)
+          console.log("bummer!", error)
           reject(error)
         });
       });
     },
    // effacer un post
-    deletePost(_context, postDel) {
+    deletePost(_context, post) {
       return new Promise((resolve, reject) => {
-      api.delete('post/:id', postDel)
-      .then(response => {
-        console.log ("effacé!", response)
-        resolve(response)
-      })
-      .catch(error => {
-        console.log("bummer!", error)
-        reject(error)
+        api.delete(`post/${post.postId}`)
+        .then(response => {
+          console.log ("effacé!", response)
+          resolve(response)
+        })
+        .catch(error => {
+          console.log("bummer!", error)
+          reject(error)
+        });
       });
-    });
-  },
-
-  // modifier un post
-  /*modifyPost(_context, postMod) {
-    return new Promise((resolve, reject) => {
-    api.delete('post/:id', postMod)
-    .then(response => {
-      console.log ("effacé!", response)
-      resolve(response)
-    })
-    .catch(error => {
-      console.log("bummer!", error)
-      reject(error)
-    });
-  });
-},
-*/
-
-/* nouvelle route modif/post/:id/edit
-dans le controller qui gère m^me chose 
-que pour afficher le formulaire lors création de post
-passer le post en param vue puis 
-text area contenu du post, titre etc...
-formulaire soumettre meme route methode post.*/
-
+    },
     showAllPosts() {
       return new Promise((resolve, reject) => {
         api.get('post')
@@ -114,9 +104,18 @@ formulaire soumettre meme route methode post.*/
         });
       });
     },
+    likePost(_context, post) {
+      return new Promise((resolve, reject) => {
+        api.post(`post/${post.postId}/like`)
+        .then(response => {
+          resolve(response)
+        })
+        .catch(error => {
+          reject(error)
+        });
+      });
+    },
   },
-
-  
   modules: {
   }
 })

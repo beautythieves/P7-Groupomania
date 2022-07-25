@@ -1,9 +1,8 @@
 <template>
-    
-        <div> 
+    <div> 
         <HeaderLoginSignup/>
         <LoginForm/>
-        </div>
+    </div>
    
 </template>
 

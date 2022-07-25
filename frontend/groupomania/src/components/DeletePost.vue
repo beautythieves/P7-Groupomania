@@ -1,6 +1,6 @@
 <template>
                 <div class="grp-header__deletePost">
-                    <button @click="deletePost" type="button" class="grp-header__deletePost__button">créer un post</button>
+                    <button @click="deletePost" type="button" class="grp-header__deletePost__button">supprimer le post</button>
                 </div>
         
 </template>

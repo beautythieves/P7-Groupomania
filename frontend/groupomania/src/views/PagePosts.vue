@@ -2,7 +2,6 @@
     <div>
     <HeaderPosts/>
      <Post2/>
-     <ModelPost/>
      <BackgroundImage/>
     <!--backgroundimage n'apparaît pas...--> 
     </div>
@@ -12,13 +11,12 @@
 <script>
 import HeaderPosts from '@/components/HeaderPosts.vue';
 import Post2 from '@/components/Post.vue';
-import ModelPost from '@/components/EditPost.vue';
 import BackgroundImage from '@/components/BackgroundImage.vue';
 
 
 export default {
     name: 'Posts',
-    components: { Post2, HeaderPosts, ModelPost, BackgroundImage },
+    components: { Post2, HeaderPosts, BackgroundImage },
   
 }
 </script>

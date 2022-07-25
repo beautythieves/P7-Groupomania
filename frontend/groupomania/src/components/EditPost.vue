@@ -1,54 +1,66 @@
-<template>
-  
-<div class=" grp-editpost__body">
-  <div> 
-    <h1 class=" grp-editpost__title" > Publier un post</h1>
+<template>  
+  <div class=" grp-editpost__body">
+    <div> 
+      <h1 class=" grp-editpost__title" > Publier un post</h1>
+    </div>
+    <div class=" grp-editpost__form"> 
+      <form>
+        <div class=" grp-editpost__texte">
+          <textarea v-model="content" maxlength="500" placeholder="Exprimez-vous... (500 caractères max)" required class=" grp-editpost__message"></textarea>
+        </div>
+        <img v-if="postToEdit.image" :src="postToEdit.image" :alt="postToEdit.content"/>
+        <div class=" grp-editpost__button">
+          <input name="inputFile"
+                 type="file"
+                 class="custom-file-input"
+                 id="inputFile"
+                 aria-describedby="inputFileAddon"
+                 @change="onFileChange"/>
+          <button @click="sendPost" type="button" class="grp-editpost__butpublish"> Publier</button>
+        </div>
+      </form>
+    </div>
   </div>
-  <div class=" grp-editpost__form"> 
-    <form action = post>
-      <div class=" grp-editpost__texte">
-        <textarea maxlength="50" placeholder = "Insérez un titre (50 caractères max)" required class=" grp-editpost__titre"></textarea>
-        <textarea maxlength="500" placeholder="Exprimez-vous... (500 caractères max)" required class=" grp-editpost__message"></textarea>
-      </div>
-      <div class=" grp-editpost__button">
-        <input id="fileUpload" ref="file" type="file" hidden />
-        <button @click.stop.prevent="addImage" class="grp-editpost__butimage">Ajouter une image</button>
-        <button @click.stop.prevent="sendPost" type="button" class="grp-editpost__butpublish"> Publier</button>
-      </div>
-    </form>
-  </div>
-</div>
-
 </template>
 
 <script>
 import { mapActions} from 'vuex';
+
 export default {
     name: 'ModelPost',
     data() {
         return {
+            id: '',
             posts: [],
             isError: false,
+            content: '',
+            file: null,
         };
+    },
+    props: { 
+      postToEdit: { type: Object } 
     },
     methods: {
         ...mapActions({
             createPost: "createPost",
+            modifyPost: "modifyPost",
         }),
         sendPost() {
-          const post = {
-            userId: '1', message: 'nouveau post', titre:"ok"
-          };
-          if(this.$file !== undefined){
-            post.image = this.$file
-          }
-            this.createPost({post})
-            //.then(this.$router.push('posts'));
+          if (this.postToEdit !== null) this.modify();
+          else this.createPost({ file: this.file, content: this.content }).then(() => this.$emit('finish'));
         },
-        addImage(){
-
-        document.getElementById("fileUpload").click()
+        modify() {
+          this.modifyPost({ postId: this.postToEdit._id, file: this.file, content: this.content }).then(() => this.$emit('finish'));
+        },
+        onFileChange(e) {
+          this.file = e.target.files[0] || e.dataTransfer.files;
         }
+    },
+    mounted() {
+      if (this.postToEdit !== null) {
+        this.id = this.postToEdit._id;
+        this.content = this.postToEdit.post;
+      }
     }
 };
 </script>
