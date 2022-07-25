@@ -3,10 +3,11 @@
     <!-- comment positionner l'image background?-->
   <router-view/>
   </div>
+  <Footer/>
 </template>
 
 <script>
-
+import Footer from './components/Footer.vue';
 export default {
     name: 'App',
     data: function() {
@@ -14,7 +15,7 @@ export default {
             text: "Hi This is example on usage of Vue.js Components"
         };
     },
-    components: {  },
+    components: { Footer },
 };
 </script>
    <!-- font family lato-->

@@ -1,18 +1,20 @@
 <template>
-    <div> 
-     <HeaderLoginSignup/>
-     <LoginForm/>
-
-    </div>
+    
+        <div> 
+        <HeaderLoginSignup/>
+        <LoginForm/>
+        </div>
+   
 </template>
 
 <script>
 import HeaderLoginSignup from '@/components/HeaderLoginSignup.vue';
 import LoginForm from '@/components/LoginForm.vue';
 
+
 export default {
     name: 'Login',
-    components: { HeaderLoginSignup, LoginForm}
+    components: { HeaderLoginSignup, LoginForm }
     
 }
 </script>

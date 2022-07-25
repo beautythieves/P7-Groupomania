@@ -3,9 +3,7 @@
      <div class ="grp-header__logo">
         <img src = "@/assets/logogrp.png" alt="logo de groupomania">
      </div>
-     <div class="grp-header__contact">
-        <a href="mailto:admin@groupomania.com">Contact</a>
-     </div>
+     
   </div>
 </template>
 
@@ -25,15 +23,16 @@ export default {
 <style lang="scss" scoped>
 .grp-header {
     display:flex;
+    padding: 30px;
     background-color: white;
-    height: 200px;
-    justify-content: space-around;
+    height: 150px;
+    justify-content: flex-start;
     align-content: center;
     border-style: solid;
     border-width: 5px;
     border-color: #4E5166;
     margin: auto;
-    width:90%;
+    width:auto;
 
 }
 .grp-header__logo {
@@ -41,12 +40,5 @@ export default {
     background-color:white;
  
 }
-.grp-header__contact  a {
-    padding: 20px;
-    font-size: 20px;
-    color: black;
-    position: absolute;
-    right:150px;
-    top: 50px;
-}
+
 </style>

@@ -7,9 +7,6 @@
         <div class="grp-header__accueil"> 
             <a><router-link to="/">Accueil  (déconnexion)</router-link></a>   
         </div>
-        <div class="grp-header__contact">
-            <a href="mailto:admin@groupomania.com">Contact</a>
-        </div>
     </div>
   </div>
 </template>
@@ -38,18 +35,23 @@ export default {
     border-style: solid;
     border-width: 5px;
     border-color: #4E5166;
+    margin: auto;
 
+    width: 90%;
 }
 .grp-header__logo {
     display:flex;
     background-color: white;
  
 }
-.grp-header__links, .grp-header__contact a, .grp-header__accueil a, .grp-header__createPost{
+.grp-header__links, .grp-header__accueil a {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 20px;
     color: black;
+     position: absolute;
+    right:50px;
+    top:25px;
 }
 </style>

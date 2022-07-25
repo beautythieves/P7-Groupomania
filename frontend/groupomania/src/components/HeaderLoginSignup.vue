@@ -6,10 +6,6 @@
      <div class="grp-header__accueil"> 
         <a><router-link to="/">Accueil</router-link></a>   
      </div>
-     <div class="grp-header__contact">
-        <a href="mailto:admin@groupomania.com">Contact</a>
-        
-     </div>
   </div>
 </template>
 
@@ -29,24 +25,29 @@ export default {
 <style lang="scss" scoped>
 .grp-header {
     display:flex;
+    padding:30px;
     background-color: white;
-        height: 200px;
-    justify-content: space-around;
+    height: 200px;
+    justify-content: flex-start;
     border-style: solid;
     border-width: 5px;
     border-color: #4E5166;
-
+    margin: auto;
+    width:auto;
 }
+
 .grp-header__logo {
     display:flex;
     background-color: white;
  
 }
-.grp-header__contact a, .grp-header__accueil a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.grp-header__accueil a{
+    display: flex;   
     font-size: 20px;
     color:black;
+    margin: 10px;
+    padding: 30px;
+    position: absolute;
+    right:50px;
 }
 </style>
