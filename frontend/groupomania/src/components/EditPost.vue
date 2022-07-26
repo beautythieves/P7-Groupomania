@@ -46,10 +46,12 @@ export default {
             modifyPost: "modifyPost",
         }),
         sendPost() {
-          if (this.postToEdit !== null) this.modify();
+          console.log('create');
+          if (this.postToEdit.content !== '') this.modify();
           else this.createPost({ file: this.file, content: this.content }).then(() => this.$emit('finish'));
         },
         modify() {
+          console.log('edit');
           this.modifyPost({ postId: this.postToEdit._id, file: this.file, content: this.content }).then(() => this.$emit('finish'));
         },
         onFileChange(e) {

@@ -66,6 +66,7 @@ export default {
 };
 </script>
 
+
 <style lang="scss">
 .grp-post {
     margin: 16px;

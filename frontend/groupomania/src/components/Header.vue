@@ -3,7 +3,6 @@
      <div class ="grp-header__logo">
         <img src = "@/assets/logogrp.png" alt="logo de groupomania">
      </div>
-     
   </div>
 </template>
 
@@ -22,10 +21,10 @@ export default {
 
 <style lang="scss" scoped>
 .grp-header {
-    display:flex;
+   display:flex;
     padding: 30px;
     background-color: white;
-    height: 150px;
+    height: 200px;
     justify-content: flex-start;
     align-content: center;
     border-style: solid;
@@ -33,12 +32,11 @@ export default {
     border-color: #4E5166;
     margin: auto;
     width:auto;
-
 }
+
 .grp-header__logo {
     display:flex;
     background-color:white;
- 
 }
 
 </style>

@@ -35,7 +35,6 @@ export default {
     margin: auto;
     width:auto;
 }
-
 .grp-header__logo {
     display:flex;
     background-color: white;

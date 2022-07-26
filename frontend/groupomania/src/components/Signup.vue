@@ -46,7 +46,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+
+<style lang="scss">
 .grp-signup__grandParentContainer{
     display: table;
     height: 100%;
@@ -57,8 +58,7 @@ export default {
 }
 .grp-signup__parentContainer {
     display:table-cell;
-    background: rgb(253,45,1);
-    background: radial-gradient(circle, rgba(253,45,1,1) 7%, rgba(255,215,215,1) 56%, rgba(0,0,0,1) 100%); 
+    background-color:#d7fffd;
     height: 50px;
     vertical-align: middle;
     }
@@ -119,7 +119,7 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #FD2D01;
+    background: orange;
     left: 0;
     top: 0;
     border-radius: 10px;

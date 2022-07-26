@@ -1,13 +1,14 @@
 <template>  
   <div>
-    <!-- comment positionner l'image background?-->
   <router-view/>
   </div>
+  <BackgroundImage/>
   <Footer/>
 </template>
 
 <script>
 import Footer from './components/Footer.vue';
+import BackgroundImage from './components/BackgroundImage.vue';
 export default {
     name: 'App',
     data: function() {
@@ -15,7 +16,7 @@ export default {
             text: "Hi This is example on usage of Vue.js Components"
         };
     },
-    components: { Footer },
+    components: { Footer, BackgroundImage },
 };
 </script>
    <!-- font family lato-->

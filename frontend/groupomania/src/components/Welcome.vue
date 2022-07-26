@@ -21,13 +21,15 @@ export default {
 .grp-accueil {
     display:flex;
     flex-direction: column;
+    width: 75%;
     background-color:#9b2230;
     justify-content: center;
     align-items: center;
     margin: auto;
     font-size:25px;
-    padding: 30px;
-    background-image: url('~@/assets/logosansnom.png');
+    margin: auto;
+    background: linear-gradient(#FFD7D7,#FD2D01);
+     background-image: url('~@/assets/logosansnom.png');
 }
 .grp-accueil__button{
     font-size: 20px;
