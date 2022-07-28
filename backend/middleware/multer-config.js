@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
   },
   filename: (_req, file, callback) => {
     const name = file.originalname.split(' ').join('_');// suprression des espaces pour le noms de fichiers et insertion de _ entre les mots
-    const extension = MIME_TYPES[file.mimetype];
+    const extension = MIME_TYPES[file.mimetype];// extension des fichiers images
     callback(null, name + Date.now() + '.' + extension);// génération du nom de fichier nom + date + extension
   }
 });

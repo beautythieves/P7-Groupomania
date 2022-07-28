@@ -6,10 +6,8 @@
     <div class=" grp-editpost__form"> 
       <form>
         <div class=" grp-editpost__texte">
-          <!-- texte obligatoire pour le post-->
           <textarea v-model="content" maxlength="500" placeholder="Exprimez-vous... (500 caractères max)" required class=" grp-editpost__message"></textarea>
         </div>
-        <!-- ca correspond à quoi lignes 13 à 21-->
         <img v-if="postToEdit.image" :src="postToEdit.image" :alt="postToEdit.content"/>
         <div class=" grp-editpost__button">
           <input name="inputFile"
@@ -49,7 +47,7 @@ export default {
         }),
         sendPost() {
           console.log('create');
-          if (this.postToEdit.content !== '') this.modify();
+          if (this.postToEdit) this.modify();
           else this.createPost({ file: this.file, content: this.content }).then(() => this.$emit('finish'));
         },
         modify() {
@@ -68,7 +66,6 @@ export default {
     }
 };
 </script>
-
 
 <style lang="css" scoped>
 .grp-editpost__body{

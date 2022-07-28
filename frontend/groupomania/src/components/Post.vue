@@ -1,7 +1,7 @@
 <template>
     <div>
         <ModelPost v-if="edit" :postToEdit="postToEdit" @finish="refresh"/>
-        <button class= "grp_creerpost" @click="modifyPost({})">Créer un post </button>
+        <button @click="modifyPost(false)">Créer un post</button>
         <div class="grp-post" v-for="post in posts" :key="post._id">
             Je suis le post numéro {{ post._id }}
             <div class="grp-post__title">texte : {{ post.post }}</div>

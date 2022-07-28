@@ -6,8 +6,10 @@ const mongoose = require('mongoose');
 const path = require('path');
 const userRoutes = require('./routes/user');
 const postRoutes = require ('./routes/post');
+const dotenv = require('dotenv').config('../.env');
+console.log(dotenv);
 
-mongoose.connect('mongodb+srv://admin:admin51@cluster0.4sx4e.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect(process.env.SECRET_MONGODB,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))

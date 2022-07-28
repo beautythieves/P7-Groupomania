@@ -40,7 +40,10 @@ export default {
         }),
         goLogin() {
             this.login({ email: this.email, password: this.password})
-            .then(this.$router.push('posts'));
+            .then(response => {
+                console.log(response);
+                this.$router.push('posts')
+            });
         }
     }
 };
@@ -139,7 +142,8 @@ export default {
     background-color:#d7ffd9;
     font-size:20px;
     margin:  50px;
-    width: 60%;
+    width: 100%;
+    justify-content: center;
   }
   .grp-login__parentContainer{
     text-align:center;

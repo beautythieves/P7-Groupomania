@@ -30,7 +30,8 @@ export default {
   color: #2c3e50;
 }
 
-nav {
+ /* utilité? 
+ nav {
   padding: 30px;
 
   a {
@@ -42,4 +43,5 @@ nav {
     }
   
 }
+*/
 </style>
