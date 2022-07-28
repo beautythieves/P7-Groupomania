@@ -77,7 +77,7 @@ exports.getOnePost = (req, res, next) => {
   );
 };
 
-/* récupération d'un post*/
+/* likes*/
 exports.likePost = (req, res, next) => {
   Post.findOne({_id: req.params.id})
       .then((post) => {

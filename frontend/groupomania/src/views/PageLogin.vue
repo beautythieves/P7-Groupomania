@@ -1,8 +1,9 @@
 <template>
-    <div> 
+
+     <div> 
      <HeaderLoginSignup/>
      <LoginForm/>
-
+   
     </div>
 </template>
 
@@ -12,13 +13,13 @@ import LoginForm from '@/components/LoginForm.vue';
 
 export default {
     name: 'Login',
-    components: { HeaderLoginSignup, LoginForm}
+    components: { HeaderLoginSignup, LoginForm }
     
 }
 </script>
 
 
-<style lang="scss">
+<style lang="css">
 .grp-accueil {
     display:flex;
     flex-direction: column;

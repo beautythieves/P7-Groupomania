@@ -67,7 +67,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="css" scoped>
 .grp-post {
     margin: 16px;
     background-color:#FFD7D7;

@@ -20,7 +20,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="css" scoped>
 .grp-accueil {
     display:flex;
     flex-direction: column;

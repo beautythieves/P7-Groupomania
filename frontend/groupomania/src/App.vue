@@ -1,8 +1,9 @@
-<template>  
+<template> 
+
   <div>
   <router-view/>
   </div>
-  <BackgroundImage/>
+  <BackgroundImage/> 
   <Footer/>
 </template>
 
@@ -20,7 +21,7 @@ export default {
 };
 </script>
    <!-- font family lato-->
-<style lang="scss">
+<style lang="css" >
 #app {
   font-family: Lato;
   -webkit-font-smoothing: antialiased;

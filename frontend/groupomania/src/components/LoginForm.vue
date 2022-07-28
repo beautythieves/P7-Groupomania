@@ -47,7 +47,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="css" scoped>
 .grp-login__grandParentContainer{
     display: table;
     height: 100%;
@@ -58,7 +58,8 @@ export default {
 }
 .grp-login__parentContainer {
     display:table-cell;
-    background-color:#d7fffd;
+    background-color:#eaffd7;
+    background-image: url('~@/assets/logosansnom.png');
     height: 50px;
     vertical-align: middle;
     }

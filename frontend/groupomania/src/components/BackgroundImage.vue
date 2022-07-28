@@ -8,7 +8,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="css" >
 .grp-backgroundimage {
   background-size: cover;
   background-image: url('~@/assets/logosansnom.png');

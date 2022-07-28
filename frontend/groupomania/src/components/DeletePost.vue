@@ -23,7 +23,6 @@ export default {
         }),
         deletePost() {
             this.deletePost()
-            //pourquoi .then est souligné?
             .then(this.$router.push('posts'));
         }
     }
@@ -31,7 +30,7 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .grp-header {
     display:flex;
     background-color:rgb(76, 0, 255);
@@ -40,7 +39,6 @@ export default {
     border-style: solid;
     border-width: 5px;
     border-color: #4E5166;
-
 }
 
 </style>

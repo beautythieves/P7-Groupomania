@@ -47,7 +47,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="css" scoped>
 .grp-signup__grandParentContainer{
     display: table;
     height: 100%;
@@ -58,7 +58,7 @@ export default {
 }
 .grp-signup__parentContainer {
     display:table-cell;
-    background-color:#d7fffd;
+    background-image: url('~@/assets/logosansnom.png');
     height: 50px;
     vertical-align: middle;
     }
@@ -75,7 +75,6 @@ export default {
     border: none;
     outline: none;
     color: #fff;
-    background:  red;
     cursor: pointer;
     position: relative;
     z-index: 0;

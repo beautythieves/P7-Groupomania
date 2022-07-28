@@ -17,7 +17,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .grp-accueil {
     display:flex;
     flex-direction: column;

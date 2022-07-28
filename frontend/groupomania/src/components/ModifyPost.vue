@@ -31,7 +31,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="css" scoped>
 .grp-header {
     display:flex;
     background-color:rgb(76, 0, 255);

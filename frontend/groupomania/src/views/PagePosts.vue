@@ -2,8 +2,6 @@
     <div>
     <HeaderPosts/>
      <Post2/>
-     <BackgroundImage/>
-    <!--backgroundimage n'apparaît pas...--> 
     </div>
     
 </template>
@@ -11,18 +9,17 @@
 <script>
 import HeaderPosts from '@/components/HeaderPosts.vue';
 import Post2 from '@/components/Post.vue';
-import BackgroundImage from '@/components/BackgroundImage.vue';
 
 
 export default {
     name: 'Posts',
-    components: { Post2, HeaderPosts, BackgroundImage },
+    components: { Post2, HeaderPosts },
   
 }
 </script>
 
 
-<style lang="scss">
+<style lang="css">
 .grp-accueil {
     display:flex;
     flex-direction: column;

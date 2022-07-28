@@ -22,7 +22,7 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .grp-header {
     display:flex;
     padding:30px;

@@ -18,8 +18,7 @@ export default {
 };
 </script>
 
-
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .grp-header {
    display:flex;
     padding: 30px;
@@ -31,7 +30,12 @@ export default {
     border-width: 5px;
     border-color: #4E5166;
     margin: auto;
-    width:auto;
+    width:100%;
+}
+@media  (max-width: 600px) {
+  .grp-header {
+    height: 100px !important;
+  }
 }
 
 .grp-header__logo {
