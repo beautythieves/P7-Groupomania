@@ -32,21 +32,37 @@ export default {
     border-style: solid;
     border-width: 5px;
     border-color: #4E5166;
-    margin: auto;
-    width:auto;
+    margin: 30px;
+    width:90%;
+    
 }
 .grp-header__logo {
     display:flex;
     background-color: white;
+    width: 60%;
  
 }
 .grp-header__accueil a{
     display: flex;   
     font-size: 20px;
     color:black;
-    margin: 10px;
-    padding: 30px;
-    position: absolute;
-    right:50px;
+    padding: 40px;
+   
+}
+@media only screen and (max-width : 1024px) {
+  .grp-header {
+    height: 100px;
+    background-color: white;
+    width: 60%;
+    border-color: #4E5166;
+  }
+  .grp-header__accueil a{
+    font-size: 15px; 
+    padding: 20px;
+    }
+
+    .grp-header__logo{
+        width:60%;
+    }
 }
 </style>

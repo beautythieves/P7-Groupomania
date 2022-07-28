@@ -1,7 +1,7 @@
 <template>
     <div>
         <ModelPost v-if="edit" :postToEdit="postToEdit" @finish="refresh"/>
-        <button @click="modifyPost({})">Créer un post</button>
+        <button class= "grp_creerpost" @click="modifyPost({})">Créer un post </button>
         <div class="grp-post" v-for="post in posts" :key="post._id">
             Je suis le post numéro {{ post._id }}
             <div class="grp-post__title">texte : {{ post.post }}</div>
@@ -81,5 +81,17 @@ export default {
 }
 .grp-post__like, .grp-post__dislike {
     padding: 20px;
+}
+.grp_creerpost{
+    display:initial;
+}
+@media only screen and (max-width : 1024px) {
+  .grp_creerpost {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+  }
+ 
 }
 </style>

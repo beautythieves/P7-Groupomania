@@ -29,18 +29,26 @@ export default {
     border-style: solid;
     border-width: 5px;
     border-color: #4E5166;
-    margin: auto;
-    width:100%;
+    margin: 30px;
+    width:90%;
 }
-@media  (max-width: 600px) {
-  .grp-header {
-    height: 100px !important;
-  }
-}
-
 .grp-header__logo {
     display:flex;
     background-color:white;
 }
+@media only screen and (max-width : 1024px) {
+  .grp-header {
+    display:flex;
+    height: 100px;
+    background-color: white;
+    width: 60%;
+    border-color: #4E5166;
+  }
+  .grp-header__logo{
+    width: 60%;
+  }
+}
+
+
 
 </style>

@@ -26,18 +26,30 @@ footer {
     display:flex;
     padding: 30px;
     background-color:white;
-    height: 50px;
+    height: 100px;
     justify-content:center;
-    align-items: center;
+    align-content: center;
     border-style: solid;
     border-width: 5px;
     border-color: #4E5166;
-    margin: auto;
-    width: auto;
+    margin: 30px;
+    width: 90%;
     color: black !important;
     font-size: 20px;
 }
 a {
     color: black !important;
+}
+
+@media only screen and (max-width : 1024px) {
+  footer {
+    display:flex;
+    height: 100px;
+    background-color: white;
+    width: 60%;
+    border-color: #4E5166;
+    font-size: 15px;
+  }
+  
 }
 </style>

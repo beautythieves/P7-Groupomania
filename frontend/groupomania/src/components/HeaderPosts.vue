@@ -28,28 +28,44 @@ export default {
 <style lang="css" scoped>
 .grp-header {
     display:flex;
-    margin: auto;
-    background-color:white;
-    height: 250px;
-    justify-content: space-between;
+    padding:30px;
+    background-color: white;
+    height: 200px;
+    justify-content: flex-start;
     border-style: solid;
     border-width: 5px;
     border-color: #4E5166;
+    margin: 30px;
+    width:90%;
 
 }
 .grp-header__logo {
-    display:flex;
+     display:flex;
     background-color: white;
+    width: 60%;
  
 }
 .grp-header__links, .grp-header__accueil a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+     display: flex;   
     font-size: 20px;
-    color: black;
-    position: absolute;
-    right:50px;
-    top: 40px;
+    color:black;
+    padding: 40px;
+   
+}
+@media only screen and (max-width : 1024px) {
+  .grp-header {
+    height: 100px;
+    background-color: white;
+    width: 60%;
+    border-color: #4E5166;
+  }
+  .grp-header__accueil a{
+    font-size: 15px; 
+    padding: 20px;
+    }
+
+    .grp-header__logo{
+        width:40%;
+    }
 }
 </style>

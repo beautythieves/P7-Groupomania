@@ -132,5 +132,19 @@ export default {
     100% { background-position: 0 0; }
 }
     
+@media only screen and (max-width : 1024px) {
+  .grp-login__grandParentContainer {
+    display: table;
+    height: 150px;
+    background-color:#d7ffd9;
+    font-size:20px;
+    margin:  50px;
+    width: 60%;
+  }
+  .grp-login__parentContainer{
+    text-align:center;
+  }
+  
+}
 
 </style>
