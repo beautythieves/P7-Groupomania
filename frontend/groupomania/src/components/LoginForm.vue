@@ -78,7 +78,7 @@ export default {
     height: 50px;
     border: none;
     outline: none;
-    color: #fff;
+    color: black;
     background:  red;
     cursor: pointer;
     position: relative;
@@ -123,7 +123,7 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: orange;
+    background: #FFD7D7;
     left: 0;
     top: 0;
     border-radius: 10px;
@@ -137,7 +137,7 @@ export default {
     
 @media only screen and (max-width : 1024px) {
   .grp-login__grandParentContainer {
-    display: table;
+    display: table-row-group;
     height: 150px;
     background-color:#d7ffd9;
     font-size:20px;

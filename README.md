@@ -20,7 +20,7 @@ nodemon server
 
 FRONT END
 
-Ouvrir un autre terminal dans le dossier frontend puis effectuer les lignes de commandes suivantes :
+Ouvrir un autre terminal dans le dossier frontend/groupomania puis effectuer les lignes de commandes suivantes :
 
 npm install
 

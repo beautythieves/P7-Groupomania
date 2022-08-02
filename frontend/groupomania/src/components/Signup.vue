@@ -74,7 +74,7 @@ export default {
     height: 50px;
     border: none;
     outline: none;
-    color: #fff;
+    color: black;
     cursor: pointer;
     position: relative;
     z-index: 0;
@@ -118,7 +118,7 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: orange;
+    background: #FFD7D7;
     left: 0;
     top: 0;
     border-radius: 10px;
@@ -129,6 +129,21 @@ export default {
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
-    
+  
+@media only screen and (max-width : 1024px) {
+  .grp-login__grandParentContainer {
+    display: table-row-group;
+    height: 150px;
+    background-color:#d7ffd9;
+    font-size:20px;
+    margin:  50px;
+    width: 100%;
+    justify-content: center;
+  }
+  .grp-login__parentContainer{
+    text-align:center;
+  }
+  
+}
 
 </style>
