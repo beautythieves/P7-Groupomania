@@ -3,10 +3,14 @@ const fs = require('fs');
 /* création d'un post*/
 exports.createPost = (req, res, next) => {
   console.log('creatrePost', req.file);
+  const img = undefined;
+  if (req.file) img = `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
   const post = new Post({
-    userId: 1,
+    userId: req.body.userId,
     post: req.body.content,
-    image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+    image: img,
+    createdAt: new Date(),
+    email: req.body.email,
   });
   post.save() // sauvegarde le post dans la BDD
     .then(() => {
@@ -25,7 +29,8 @@ exports.modifyPost = (req, res, next) => {
   Post.findOne({_id: req.params.id})
     .then((post) => {
       const newPost = post;
-      newPost.post = content;      
+      newPost.post = content;
+      newPost.modifyAt = new Date();
       if (req.file) newPost.image = `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
       Post.updateOne({ _id: post._id }, { $set: { ...newPost } })
         .then(() => res.status(200).json({ message: 'modifié !'}))
@@ -81,12 +86,15 @@ exports.getOnePost = (req, res, next) => {
 exports.likePost = (req, res, next) => {
   Post.findOne({_id: req.params.id})
       .then((post) => {
-        const newPost = post;
-        newPost.likes = Number(post.likes) + 1; 
-        Post.updateOne({ _id: post._id }, { $set: { ...newPost } })
-          .then(() => res.status(200).json({ message: 'liked'}))
-          .catch(error => res.status(400).json({ error }));
-      })
+        if (!post.usersLiked.includes(req.body.userId)) {
+          const newPost = post;
+          newPost.likes = Number(post.likes) + 1; 
+          newPost.usersLiked.push(req.body.userId);
+          Post.updateOne({ _id: post._id }, { $set: { ...newPost } })
+            .then(() => res.status(200).json({ message: 'liked'}))
+            .catch(error => res.status(400).json({ error }));
+        } else res.status(500).json({ message: 'already liked'})
+      })        
       .catch((error) => {res.status(404).json({ error: error});
     }
   );

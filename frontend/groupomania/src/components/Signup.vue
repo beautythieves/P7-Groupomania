@@ -37,11 +37,18 @@ export default {
     methods: {
         ...mapActions({
             signup: 'signup',
+            login: 'login',
         }),
         goSignup() {
             this.signup({ email: this.email, password: this.password})
-            .then(this.$router.push('posts'));
-        }
+            .then(() => {
+                this.login({ email: this.email, password: this.password})
+                    .then(response => {
+                        console.log(response);
+                        this.$router.push('posts')
+                    });
+            });
+        },
     }
 };
 </script>

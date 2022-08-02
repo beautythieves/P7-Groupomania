@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { mapActions} from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
     name: 'ModelPost',
@@ -40,6 +40,12 @@ export default {
     props: { 
       postToEdit: { type: Object } 
     },
+    computed: {
+        ...mapGetters({
+            userId: 'userId',
+            email: 'email',
+        }),
+    },
     methods: {
         ...mapActions({
             createPost: "createPost",
@@ -48,7 +54,7 @@ export default {
         sendPost() {
           console.log('create');
           if (this.postToEdit) this.modify();
-          else this.createPost({ file: this.file, content: this.content }).then(() => this.$emit('finish'));
+          else this.createPost({ file: this.file, content: this.content, userId: this.userId, email: this.email }).then(() => this.$emit('finish'));
         },
         modify() {
           console.log('edit');

@@ -5,14 +5,18 @@
      </div>
      <div class="grp-header__links">
         <div class="grp-header__accueil"> 
-            <a><router-link to="/">Accueil (déconnexion)</router-link></a>   
+            <div class="grp-header__infos">   
+                <div class="grp-header__email">Bonjour {{ email }}</div>   
+                <div class="grp-header__userId">(identifiant: {{ userId }})</div>
+            </div>
+            <button @click ="goLogout">Déconnexion</button>   
         </div>
     </div>
   </div>
 </template>
 
 <script>
-
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
     name: 'HeaderPosts',
@@ -20,6 +24,20 @@ export default {
         return {
             text: "Mon beau site"
         };
+    },
+    computed: {
+        ...mapGetters({
+            userId: 'userId',
+            email: 'email'
+        }),
+    },
+    methods: {
+        ...mapActions({
+           logout: 'logout', 
+        }),
+        goLogout() {
+            this.logout().then(this.$router.push('/'));
+        }
     }
 };
 </script>
@@ -42,9 +60,23 @@ export default {
 .grp-header__logo {
      display:flex;
     background-color: white;
-    width: 60%;
- 
+    width: 60%; 
 }
+
+.grp-header__infos {
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.grp-header__title {
+    font-size: 14px;
+}
+
+.grp-header__userId {
+    font-size: 12px;
+}
+
 .grp-header__links, .grp-header__accueil a{
      display: flex;   
     font-size: 20px;

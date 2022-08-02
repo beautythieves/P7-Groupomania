@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const fs = require('fs');
 
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -9,7 +10,7 @@ const postRoutes = require ('./routes/post');
 const dotenv = require('dotenv').config('../.env');
 console.log(dotenv);
 
-mongoose.connect(process.env.SECRET_MONGODB,
+mongoose.connect('mongodb+srv://admin:admin51@cluster0.4sx4e.mongodb.net/?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
@@ -24,7 +25,11 @@ app.use((req, res, next) => {
      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
      next();
    });
- 
+
+  //Permet de créer le dossier images si il n'existe pas
+if (!fs.existsSync('images')) {
+  fs.mkdirSync('images');
+};
    app.use('/images', express.static(path.join(__dirname, 'images')));
    app.use('/api/post', postRoutes);
    app.use('/api/auth', userRoutes);

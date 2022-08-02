@@ -8,7 +8,7 @@ const api = axios.create({
 // Utilisateur par défaut
 const defaultUser = {
   userId: -1,
-  token: ''
+  token: '',
 }
 
 let user = localStorage.getItem('user');
@@ -34,9 +34,6 @@ export default createStore({
 
   //GETTERS
   getters: {
-    userName: state => {
-      return state.user.userName;
-    },
     userId: state => {
       return state.user.userId;
     },
@@ -46,6 +43,9 @@ export default createStore({
       } else {
         return false
       }
+    },
+    email: state => {
+      return state.user.email;
     },
   },
 
@@ -74,7 +74,7 @@ export default createStore({
       return new Promise((resolve, reject) => {
         api.post('auth/signup', usersInfos)
         .then(response => {
-          console.log('reussi', response)
+          console.log('reussi', response);
           resolve(response)
         })
         .catch(error => {
@@ -108,7 +108,8 @@ export default createStore({
     createPost(_context, post) {
       const formData = new FormData();
       formData.append("content", post.content);
-      formData.append("title", post.title);
+      formData.append("userId", post.userId);
+      formData.append("email", post.email);
       if (post.file) formData.append("inputFile", post.file);
       return new Promise((resolve, reject) => {
       axios.post('http://localhost:4000/api/post', formData,
@@ -176,8 +177,9 @@ export default createStore({
       });
     },
     likePost(_context, post) {
+      console.log('store', post)
       return new Promise((resolve, reject) => {
-        api.post(`post/${post.postId}/like`)
+        api.post(`post/${post.postId}/like`, { userId: post.userId })
         .then(response => {
           resolve(response)
         })
