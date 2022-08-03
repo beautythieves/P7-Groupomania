@@ -46,7 +46,7 @@ exports.deletePost = (req, res, next) => {
       .then(post => {
         console.log('find', post);
         Post.deleteOne({ _id: post._id })
-          .then(() => res.status(200).json({ message: 'Sauce supprimée !'}))
+          .then(() => res.status(200).json({ message: 'Post supprimé!'}))
           .catch(error => {
             console.log(error);
             res.status(400).json(error)
