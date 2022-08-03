@@ -46,5 +46,5 @@ export default {
 
 
 
-<style lang="scss">
+<style lang="css">
 </style>

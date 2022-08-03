@@ -40,6 +40,7 @@ export default {
     props: { 
       postToEdit: { type: Object } 
     },
+
     computed: {
         ...mapGetters({
             userId: 'userId',
