@@ -10,7 +10,7 @@ const postRoutes = require ('./routes/post');
 const dotenv = require('dotenv').config('../.env');
 console.log(dotenv);
 
-mongoose.connect(process.env.SECRET_MONGODB,
+mongoose.connect(process.env.SECRET_MONGODB,// sécurisation via dotenv
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
@@ -18,7 +18,8 @@ mongoose.connect(process.env.SECRET_MONGODB,
 
 
   app.use(express.json());
- 
+ /* logique CORS (cross origin ressource sharing) pour 
+ que les utilisateurs puissent accéder depuis n'importe où à l'API */
 app.use((req, res, next) => {
      res.setHeader('Access-Control-Allow-Origin', '*');
      res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
