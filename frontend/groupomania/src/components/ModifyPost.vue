@@ -23,7 +23,6 @@ export default {
         }),
         modifyPost() {
             this.modifyPost()
-            //pourquoi .then est souligné?
             .then(this.$router.push('posts'));
         }
     }
