@@ -3,7 +3,7 @@ const fs = require('fs');
 /* création d'un post*/
 exports.createPost = (req, res, next) => {
   console.log('creatrePost', req.file);
-  const img = undefined;
+  let img = undefined;
   if (req.file) img = `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
   const post = new Post({
     userId: req.body.userId,

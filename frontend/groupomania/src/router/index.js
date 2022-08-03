@@ -32,7 +32,7 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes
 })
-
+// si utilisateur inconnu, renvoie vers page login
 router.beforeEach((to, from, next) => {
   if (to.name !== 'login' && to.name !== 'signup' && to.name !== 'home') {
     const user = JSON.parse(localStorage.getItem("user"));
