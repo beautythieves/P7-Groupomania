@@ -30,7 +30,7 @@ exports.modifyPost = (req, res, next) => {
     .then((post) => {
       const newPost = post;
       newPost.post = content;
-      newPost.modifyAt = new Date();// si le post est modifié, la date est modifiée
+      newPost.modifyAt = new Date();// Classe les postes par ordre de création
       if (req.file) newPost.image = `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
       Post.updateOne({ _id: post._id }, { $set: { ...newPost } })
         .then(() => res.status(200).json({ message: 'modifié !'}))
